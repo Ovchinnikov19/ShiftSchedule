@@ -9,12 +9,22 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-
+    var nameSchedule:String!{
+        willSet{
+            print("Did set new name Schedule \(newValue ?? "Unknown")")
+        }
+    }
+    
+    @IBOutlet weak var nameScheduleTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func generateScheduleTappedButton(_ sender: Any) {
+        nameSchedule = nameScheduleTF.text
+    }
+    
 }
 
